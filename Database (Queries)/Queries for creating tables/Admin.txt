@@ -1,0 +1,6 @@
+CREATE TABLE admin(
+ username VARCHAR2(12),
+ "password" VARCHAR2(20) NOT NULL,
+ PRIMARY KEY (username),
+ CHECK (REGEXP_LIKE("password", '.*{8,}'))
+);

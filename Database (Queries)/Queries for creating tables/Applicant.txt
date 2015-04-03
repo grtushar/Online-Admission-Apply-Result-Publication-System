@@ -1,0 +1,9 @@
+CREATE table Applicant (
+	username VARCHAR2(12),
+	"password" VARCHAR2(20) NOT NULL,
+	subjectPreference VARCHAR2(7) NOT NULL,
+	admissionTestCategory VARCHAR2(2) NOT NULL,
+	PRIMARY KEY (username),
+	CHECK (REGEXP_LIKE(subjectPreference, '[1-7]{6,}')),
+	CHECK (REGEXP_LIKE("password", '.*{8,}'))
+);

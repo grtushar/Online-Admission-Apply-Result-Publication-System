@@ -1,0 +1,18 @@
+CREATE TABLE Academic_Info (
+        username VARCHAR2(12),
+        sscGPA NUMBER(3,2) CHECK(sscGPA<=5) NOT NULL,
+        hscGPA NUMBER(3,2) CHECK(hscGPA<=5) NOT NULL,
+        schoolName VARCHAR2(20) NOT NULL,
+        collegeName VARCHAR2(20) NOT NULL,
+        sscPassingYear INTEGER NOT NULL,
+        hscPassingYear INTEGER NOT NULL,
+        sscBoard VARCHAR2(20) NOT NULL,
+        hscBoard VARCHAR2(20) NOT NULL,
+        sscRollNo INTEGER CHECK(LENGTH(sscRollNo)=6) NOT NULL,
+        hscRollNo INTEGER CHECK(LENGTH(hscRollNo)=6) NOT NULL,
+        sscRegNo INTEGER CHECK(LENGTH(sscRegNo)=6) NOT NULL,
+        hscRegNo INTEGER CHECK(LENGTH(hscRegNo)=6) NOT NULL,
+        PRIMARY KEY (sscRollNo,sscPassingYear),
+        FOREIGN KEY (username) REFERENCES APPLICANT(username)
+        
+);

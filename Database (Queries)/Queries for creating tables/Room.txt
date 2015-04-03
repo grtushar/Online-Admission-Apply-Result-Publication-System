@@ -1,0 +1,5 @@
+CREATE TABLE Room (
+   RoomNO VARCHAR2(4) primary key CHECK(REGEXP_LIKE(RoomNO, '[1-8][A-C][0][1-9]')),
+   Capacity INTEGER NOT NULL,
+   Level INTEGER check(Level=8 AND Level=1)      
+);

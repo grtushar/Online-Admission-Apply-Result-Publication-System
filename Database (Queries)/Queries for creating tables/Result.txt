@@ -1,0 +1,7 @@
+CREATE TABLE Result(
+			username VARCHAR2(12),
+			resultId INTEGER primary key,
+			score NUMBER NOT NULL,
+			dept VARCHAR2(3),
+			FOREIGN KEY (username) REFERENCES APPLICANT(username)
+);

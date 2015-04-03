@@ -1,0 +1,10 @@
+create or replace 
+	trigger decrement_room
+after insert on applicantroominfo
+for each row 
+declare 
+begin 
+	UPDATE ROOM
+	set ROOM.CAPACITY = ROOM.CAPACITY - 1
+	WHERE ROOM.ROOMNO = :new.ROOMNO;
+end;

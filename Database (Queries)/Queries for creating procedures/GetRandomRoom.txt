@@ -1,0 +1,16 @@
+CREATE OR REPLACE 
+PROCEDURE getRoom (rmno out VARCHAR2)
+AS
+	CURSOR sCursor IS 
+	SELECT * FROM room ORDER BY dbms_random.value; 
+BEGIN
+	-- routine body goes here, e.g.
+	-- DBMS_OUTPUT.PUT_LINE('Navicat for Oracle');
+	for cursor_val in sCursor 
+		LOOP 
+			if cursor_val.capacity > 0 THEN
+				rmno := cursor_val.roomno;
+				exit;
+			END if;
+	END LOOP;
+END;

@@ -1,0 +1,5 @@
+create table ApplicantRoomInfo (
+	username VARCHAR2(12) primary key,
+	RoomNO VARCHAR2(4) CHECK(REGEXP_LIKE(RoomNO, '[1-8][A-C][0][1-9]')),
+	FOREIGN KEY (ROOMNO) REFERENCES ROOM(roomno)
+)

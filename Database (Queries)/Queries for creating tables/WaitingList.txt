@@ -1,0 +1,6 @@
+CREATE TABLE WaitingList(
+			username VARCHAR2(12),
+			waitinglistId INTEGER primary key,
+			dept VARCHAR2(3) NOT NULL,
+			FOREIGN KEY (username) REFERENCES APPLICANT(username)
+);

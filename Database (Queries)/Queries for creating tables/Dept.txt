@@ -1,0 +1,5 @@
+CREATE table dept (
+	deptName VARCHAR2(3),
+	seat NUMBER,
+	primary key(deptName)
+);

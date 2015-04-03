@@ -1,0 +1,11 @@
+CREATE or replace
+	TRIGGER decrement_seat
+after update on RESULT
+for each ROW
+DECLARE
+
+BEGIN
+	UPDATE DEPT
+	SET DEPT.SEAT= DEPT.SEAT-1
+	WHERE DEPT.DEPTNAME = :new.DEPT;
+end;

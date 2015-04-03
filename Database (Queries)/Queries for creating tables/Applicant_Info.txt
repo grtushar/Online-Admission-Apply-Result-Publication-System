@@ -1,0 +1,15 @@
+CREATE TABLE Applicant_Info (
+	username VARCHAR2(12),
+	firstName VARCHAR2(20) NOT NULL,
+	lastName VARCHAR2(20) NOT NULL,
+	fatherName VARCHAR2(30) NOT NULL,
+	motherName VARCHAR2(30) NOT NULL,
+	email VARCHAR2(30) NOT NULL,
+	mobileNo VARCHAR2(11),
+	birthDate DATE,
+	address VARCHAR2(100),
+	FOREIGN KEY (username) REFERENCES APPLICANT(username),
+	PRIMARY KEY(mobileNo),
+	CHECK (REGEXP_LIKE(email, '(.+)(@)[a-z]+(\.)[a-z]+')),
+	CHECK (REGEXP_LIKE(mobileNo, '01[5-9][0-9]{8,}'))
+)
